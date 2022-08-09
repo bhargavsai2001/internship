@@ -22,7 +22,9 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      
+      .alert{
+        padding: 6px;
+      }
     </style>
     
   </head>
@@ -30,7 +32,12 @@
     <nav class="navbar ">
       <div class="container">
         <span class="navbar-brand text-white mb-0 h1">Intern Journey</span>
+
+        <div class="alert alert-warning alert-dismissible fade show" id="salalert" role="alert" style="display: none;">
+          <!--<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+        </div>
       </div>
+
     </nav>
     <br>
     <div class="container ">
@@ -108,16 +115,23 @@
 
         </div>
       </div>
+
+
       <p class="text-center text-black-50 " style="font-size: 12px;">PERSONAL USE</p>
     </div>
 
 
 
       <script>  
-       var date1, date2;  
+        var date1, date2;  
          date1 = new Date("05/23/2022");  
          date2 = new Date("04/22/2023");  
          today = new Date();
+         saldate = new Date("08/08/2022");
+         
+         if (today == saldate) {
+          document.getElementById("salalert").style.display = "block";
+         }
          var time_difference = date2.getTime() - date1.getTime();    
          var days_difference = time_difference / (1000 * 60 * 60 * 24);
           var tim_diff = today.getTime() - date1.getTime();
@@ -137,6 +151,24 @@
           var mm = today.toLocaleString('default', { month: 'long' });
           var yy = new Date().getFullYear()
           var nowdate = (dd+" "+mm+" "+yy);
+          
+          if(dd == "22"){
+            document.getElementById("salalert").style.display = "block";
+            document.getElementById("salalert").style.background= "linear-gradient(315deg, rgba(251,171,126,1) 0%, rgba(247,206,104,1) 100%)";
+            document.getElementById("salalert").innerHTML="Its Salary Day";
+          }
+
+
+          if(dd == "20"){
+            document.getElementById("salalert").style.display = "block";
+            document.getElementById("salalert").innerHTML="Salary in 2 days";
+          }
+
+          if(dd == "21"){
+            document.getElementById("salalert").style.display = "block";
+            document.getElementById("salalert").innerHTML="Salary in 1 day";
+          }
+
           document.getElementById("today").innerHTML = nowdate;
 
       </script> 
