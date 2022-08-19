@@ -33,7 +33,7 @@
       <div class="container">
         <span class="navbar-brand text-white mb-0 h1">Intern Journey</span>
 
-        <div class="alert alert-warning alert-dismissible fade show" id="salalert" role="alert" style="display: none;">
+        <div class="alert alert-dismissible alert-dark text-white fade show" id="salalert" role="alert" style="display: none; background-color: rgba(0, 0, 0, 0.5);">
           <!--<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
         </div>
       </div>
@@ -159,14 +159,31 @@
           }
 
 
+          
+
+          if(dd == "21"){
+            document.getElementById("salalert").style.display = "block";
+            document.getElementById("salalert").innerHTML="Salary in 1 day";
+          }
+
           if(dd == "20"){
             document.getElementById("salalert").style.display = "block";
             document.getElementById("salalert").innerHTML="Salary in 2 days";
           }
 
-          if(dd == "21"){
+          if(dd == "19"){
             document.getElementById("salalert").style.display = "block";
-            document.getElementById("salalert").innerHTML="Salary in 1 day";
+            document.getElementById("salalert").innerHTML="Salary in 3 days";
+          }
+
+          if(dd == "18"){
+            document.getElementById("salalert").style.display = "block";
+            document.getElementById("salalert").innerHTML="Salary in 4 days";
+          }
+
+          if(dd == "17"){
+            document.getElementById("salalert").style.display = "block";
+            document.getElementById("salalert").innerHTML="Salary in 5 days";
           }
 
           document.getElementById("today").innerHTML = nowdate;
